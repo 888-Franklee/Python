@@ -1,6 +1,6 @@
 # PyPDF2の紹介と活用ガイド
 
-## ✅  PyPDF2とは？
+## 1.  PyPDF2とは？
 
 **PyPDF2**は、PDFファイルを操作するための純粋なPythonライブラリです。
 以下のような操作が可能です：
@@ -14,7 +14,7 @@
 
 ---
 
-## ✅ インストール方法
+## 2. インストール方法
 
 ```bash
 pip install PyPDF2
@@ -22,9 +22,9 @@ pip install PyPDF2
 
 ---
 
-## ✅ 基本的な使用例
+## 3. 基本的な使用例
 
-### 1. PDFファイルの読み取り
+### 🔹PDFファイルの読み取り
 
 ```python
 from PyPDF2 import PdfReader
@@ -36,7 +36,7 @@ page = reader.pages[0]
 print(page.extract_text())  # 最初のページからテキストを抽出
 ```
 
-### 2. 複数PDFファイルの結合
+### 🔹 複数PDFファイルの結合
 
 ```python
 from PyPDF2 import PdfMerger
@@ -48,7 +48,7 @@ merger.write("merged.pdf")
 merger.close()
 ```
 
-### 3. PDFのページごとの分割
+### 🔹 PDFのページごとの分割
 
 ```python
 from PyPDF2 import PdfReader, PdfWriter
@@ -61,7 +61,7 @@ for i, page in enumerate(reader.pages):
         writer.write(f)
 ```
 
-### 4. ページの回転
+### 🔹 ページの回転
 
 ```python
 from PyPDF2 import PdfReader, PdfWriter
@@ -77,7 +77,7 @@ with open("rotated.pdf", "wb") as f:
     writer.write(f)
 ```
 
-### 5. PDFの暗号化
+### 🔹 PDFの暗号化
 
 ```python
 from PyPDF2 import PdfReader, PdfWriter
@@ -95,7 +95,7 @@ with open("encrypted.pdf", "wb") as f:
 
 ---
 
-## ✅ 上級活用：表や注釈の抽出
+## 3.  上級活用：表や注釈の抽出
 
 PyPDF2単体では表や注釈の抽出に制限があります。以下のライブラリとの併用を推奨します：
 
@@ -126,14 +126,14 @@ if "/Annots" in page:
 
 ---
 
-## ✅ 注意事項
+## 4. 注意事項
 
 - テキスト抽出はPDFの構造に依存するため、結果が不完全になる場合があります。
 - PyPDF2は画像・フォーム・複雑なレイアウトの処理には向いていません。
 
 ---
 
-## ✅ まとめ
+## 5. まとめ
 
 PyPDF2は、PDF処理を自動化したい場合に便利な軽量ライブラリです。
 より高度なPDF操作を必要とする場合は、以下も併用しましょう：
